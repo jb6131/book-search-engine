@@ -49,15 +49,15 @@ const SavedBooks = () => {
       </div>
       <Container>
         <h2 className='pt-5'>
-          {userData.savedBooks.length
-            ? `Viewing ${userData.savedBooks.length} saved ${userData.savedBooks.length === 1 ? 'book' : 'books'}:`
+          {userData.me.savedBooks.length
+            ? `Viewing ${userData.me.savedBooks.length} saved ${userData.me.savedBooks.length === 1 ? 'book' : 'books'}:`
             : 'You have no saved books!'}
         </h2>
         <Row>
-          {userData.savedBooks.map((book) => {
+          {userData.me.savedBooks.map((book) => {
             return (
-              <Col md="4">
-                <Card key={book.bookId} border='dark'>
+              <Col md="4" key={book.bookId}>
+                <Card border='dark'>
                   {book.image ? <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' /> : null}
                   <Card.Body>
                     <Card.Title>{book.title}</Card.Title>
